@@ -61,7 +61,7 @@ Tools & Platforms
 - Eclipse/STS
 
 ---
-Database Tables
+## Database Tables
 
 Table Name| Description
 User| Stores user account details, authentication data, and roles (ADMIN/USER)
