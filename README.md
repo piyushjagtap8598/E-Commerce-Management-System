@@ -61,7 +61,17 @@ Tools & Platforms
 - Eclipse/STS
 
 ---
+Database Tables
 
+Table Name| Description
+User| Stores user account details, authentication data, and roles (ADMIN/USER)
+Product| Stores product information such as name, description, price, and stock
+Category| Stores product categories for better organization
+Cart| Stores products added to a user's shopping cart
+Order| Stores order details placed by users
+OrderItem| Stores individual products associated with each order
+
+---
 Project Structure
 
 E-Commerce-Management-System
