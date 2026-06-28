@@ -1,12 +1,12 @@
-E-Commerce Management System
+# E-Commerce Management System
 
 A full-stack E-Commerce Management System built using Spring Boot, React.js, MySQL, JWT Authentication, and Role-Based Access Control (RBAC). The application provides secure authentication, product management, cart functionality, and order management for both Admin and User roles.
 
 ---
 
-Features
+## Features
 
-Authentication & Security
+### Authentication & Security
 
 - User Registration and Login
 - JWT Token-Based Authentication
@@ -14,7 +14,7 @@ Authentication & Security
 - Role-Based Access Control (ADMIN / USER)
 - Protected API Endpoints
 
-Admin Features
+### Admin Features
 
 - View All Products
 - Add New Products
@@ -22,7 +22,7 @@ Admin Features
 - Delete Products
 - Manage Product Catalog
 
-User Features
+### User Features
 
 - Browse Products
 - Add Products to Cart
@@ -33,9 +33,9 @@ User Features
 
 ---
 
-Tech Stack
+## Tech Stack
 
-Backend
+### Backend
 
 - Java
 - Spring Boot
@@ -45,14 +45,14 @@ Backend
 - Hibernate
 - MySQL
 
-Frontend
+### Frontend
 
 - React.js
 - React Router
 - Axios
 - Bootstrap
 
-Tools & Platforms
+### Tools & Platforms
 
 - Git
 - GitHub
@@ -72,7 +72,7 @@ Order| Stores order details placed by users
 OrderItem| Stores individual products associated with each order
 
 
-Project Structure
+## Project Structure
 
 E-Commerce-Management-System
 
@@ -88,56 +88,56 @@ E-Commerce-Management-System
 
 ---
 
-Screenshots
+## Screenshots
 
-Login page
+### Login page
 
 ![Login Page](screenshots/Login.png)
 
-Admin Module
+### Admin Module
 
-Product List
+### Product List
 
 ![Product List](screenshots/AdminProductList.png)
 
-Add Product
+### Add Product
 
 ![Add Product](screenshots/AddProduct.png)
 
-Update Product
+### Update Product
 
 ![Update Product](screenshots/UpdateProduct.png)
 
 
 ---
 
-User Module
+### User Module
 
-Product List
+### Product List
 
 ![User Product List](screenshots/UserProductList.png)
 
 
 
-Cart
+### Cart
 
 ![Cart](screenshots/Cart.png)
 
-My Orders
+### My Orders
 
 ![My Orders](screenshots/MyOrders.png)
 
-Order Details View
+### Order Details View
 
 ![Order Details](screenshots/OrderDetails.png)
 
 ---
 
-Installation & Setup
+## Installation & Setup
 
 
 
-Backend Setup
+### Backend Setup
 
 cd backend
 mvn spring-boot:run
@@ -146,7 +146,7 @@ Backend will start on:
 
 http://localhost:8080
 
-Frontend Setup
+### Frontend Setup
 
 cd frontend
 npm install
@@ -160,7 +160,7 @@ http://localhost:3000
 
 
 
-Author
+## Author
 
 Piyush Jagtap
 
