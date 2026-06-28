@@ -73,7 +73,7 @@ Cart| Stores products added to a user's shopping cart
 Order| Stores order details placed by users
 OrderItem| Stores individual products associated with each order
 
-
+---
 ## Project Structure
 
 E-Commerce-Management-System
