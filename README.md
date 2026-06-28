@@ -83,15 +83,15 @@ Admin Module
 
 Product List
 
-"Product List" (screenshots/AdminProductList.png)
+![Product List](screenshots/AdminProductList.png)
 
 Add Product
 
-"Add Product" (screenshots/AddProduct.png)
+![Add Product](screenshots/AddProduct.png)
 
 Update Product
 
-"Update Product" (screenshots/UpdateProduct.png)
+![Update Product](screenshots/UpdateProduct.png)
 
 
 ---
@@ -100,21 +100,21 @@ User Module
 
 Product List
 
-"User Product List" (screenshots/UserProductList.png)
+![User Product List](screenshots/UserProductList.png)
 
 
 
 Cart
 
-"Cart" (screenshots/Cart.png)
+![Cart](screenshots/Cart.png)
 
 My Orders
 
-"My Orders" (screenshots/MyOrders.png)
+![My Orders](screenshots/MyOrders.png)
 
 Order Details View
 
-"Order Details" (screenshots/OrderDetails.png)
+![Order Details](screenshots/OrderDetails.png)
 
 ---
 
