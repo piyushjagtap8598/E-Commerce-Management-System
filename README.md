@@ -64,12 +64,12 @@ A full-stack E-Commerce Management System built using Spring Boot, React.js, MyS
 ## Database Tables
 
 
-_**User** - Stores user account details, authentication data, and roles (ADMIN/USER)
-_**Product** - Stores product information such as name, description, price, and stock
-_**Category** - Stores product categories for better organization
-_**Cart** - Stores products added to a user's shopping cart
-_**Order** - Stores order details placed by users
-_**OrderItem** - Stores individual products associated with each order
+-**User** - Stores user account details, authentication data, and roles (ADMIN/USER)
+-**Product** - Stores product information such as name, description, price, and stock
+-**Category** - Stores product categories for better organization
+-**Cart** - Stores products added to a user's shopping cart
+-**Order** - Stores order details placed by users
+-**OrderItem** - Stores individual products associated with each order
 
 ---
 ## Project Structure
