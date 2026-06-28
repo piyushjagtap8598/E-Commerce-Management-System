@@ -65,6 +65,7 @@ Tools & Platforms
 Project Structure
 
 E-Commerce-Management-System
+
 │
 
 ├── backend
