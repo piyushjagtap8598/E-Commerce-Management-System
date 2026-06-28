@@ -148,15 +148,7 @@ http://localhost:3000
 
 ---
 
-Future Enhancements
 
-- Product Search & Filtering
-- Payment Gateway Integration
-- Email Notifications
-- Product Image Upload
-- Admin Dashboard Analytics
-
----
 
 Author
 
