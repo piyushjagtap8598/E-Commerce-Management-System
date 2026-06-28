@@ -28,7 +28,7 @@ User Features
 - Add Products to Cart
 - View Cart Items
 - Place Orders
-
+- View Order History
 - View Order Details
 
 ---
