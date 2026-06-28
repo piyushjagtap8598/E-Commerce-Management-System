@@ -28,7 +28,7 @@ User Features
 - Add Products to Cart
 - View Cart Items
 - Place Orders
-- View Order History
+
 - View Order Details
 
 ---
@@ -66,9 +66,13 @@ Project Structure
 
 E-Commerce-Management-System
 │
+
 ├── backend
+
 ├── frontend
+
 ├── screenshots
+
 └── README.md
 
 ---
