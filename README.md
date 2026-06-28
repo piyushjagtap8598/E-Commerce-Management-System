@@ -63,6 +63,8 @@ A full-stack E-Commerce Management System built using Spring Boot, React.js, MyS
 ---
 ## Database Tables
 
+
+
 Table Name| Description
 User| Stores user account details, authentication data, and roles (ADMIN/USER)
 Product| Stores product information such as name, description, price, and stock
