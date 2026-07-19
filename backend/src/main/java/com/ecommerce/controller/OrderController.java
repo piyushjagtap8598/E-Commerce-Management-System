@@ -29,6 +29,11 @@ public class OrderController
 		System.out.println("Order Items=" +order.getOrderitems());
 		return orderservice.placeOrder(order);
 	}
+	@PostMapping("/buy-now")
+	public Order buyNow(@RequestBody Order order)
+	{
+	    return orderservice.buyNow(order);
+	}
 	
 	@GetMapping
 	public List<Order> getAllOrder()

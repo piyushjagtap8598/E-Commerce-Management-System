@@ -24,6 +24,7 @@ public class ProductService
 		return productrepository.findAll();
 	}
 	
+	
 	public Product updateProduct(Long id,Product product)
 	{
 		Product existingProduct = productrepository.findById(id).orElse(null);
@@ -51,6 +52,10 @@ public class ProductService
 	public List<Product> getProductByCategory(Long categoryId)
 	{
 		return productrepository.findByCategoryId(categoryId);
+	}
+	public Product getProductById(Long id)
+	{
+	    return productrepository.findById(id).orElse(null);
 	}
 
 }

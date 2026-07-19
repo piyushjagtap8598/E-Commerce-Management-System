@@ -8,6 +8,10 @@ import EditProduct from './pages/EditProduct';
 import Cart from './pages/Cart';
 import Orders from './pages/Orders';
 import OrderDetails from './pages/OrderDetails';
+import Dashboard from "./pages/Dashboard";
+import Profile from './components/Profile';
+import ProductDetails from './pages/ProductDetails';
+import Register from './pages/Register';
 
 function ProtectedRoute({children})
 {
@@ -26,6 +30,10 @@ function App() {
       <Route path="/cart" element={ <ProtectedRoute> <Cart/> </ProtectedRoute>}/>
       <Route path="/orders" element={ <ProtectedRoute> <Orders/> </ProtectedRoute>}/>
       <Route path="/orders/:id" element={ <ProtectedRoute> <OrderDetails/> </ProtectedRoute>}/>
+      <Route path="/dashboard" element={<ProtectedRoute> <Dashboard /> </ProtectedRoute>} />
+      <Route path="/profile" element={ <ProtectedRoute> <Profile/> </ProtectedRoute>}/>
+      <Route path="/product/:id" element={ <ProtectedRoute> <ProductDetails/> </ProtectedRoute>}/>
+      <Route path="/register" element={  <Register/>}/>
     </Routes>
     </BrowserRouter>
   );

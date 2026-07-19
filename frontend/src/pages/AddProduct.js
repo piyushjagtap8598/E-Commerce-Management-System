@@ -7,12 +7,22 @@ function AddProduct(){
     const [price,setPrice]=useState("");
     const [quantity,setQuantity]=useState("");
     const [description,setDescription]=useState("");
+    const [categoryId,setCategoryId]=useState("");
+    const [image,setImage]=useState(null);
     const navigate = useNavigate();
 
     const handleSubmit = (e) =>{
         e.preventDefault();
-    const product ={productname,price,quantity,description};
-    ProductService.addProducts(product).then(()=>{
+    const formData = new FormData();
+
+      formData.append("productname", productname);
+      formData.append("price", price);
+      formData.append("quantity", quantity);
+      formData.append("description", description);
+      formData.append("categoryId", categoryId);
+      formData.append("image", image);
+     
+        ProductService.addProducts(formData).then(()=>{
         alert("Product Added Succesfully");
         navigate("/products");
     })
@@ -31,6 +41,8 @@ return(
             <input className="form-control mb-2" placeholder="Price" type="number" value={price} onChange={(e)=>setPrice(e.target.value)}/>
             <input className="form-control mb-2" placeholder="Quantity" type="number" value={quantity} onChange={(e)=>setQuantity(e.target.value)}/>
             <input className="form-control mb-2" placeholder="Description" value={description} onChange={(e)=>setDescription(e.target.value)}/>
+            <input className="form-control mb-2" placeholder="Category Id" type="number" value={categoryId} onChange={(e) => setCategoryId(e.target.value)}/>
+            <input className="form-control mb-3" type="file"accept="image/*"onChange={(e) => setImage(e.target.files[0])}/>
             <button className="btn btn-success" onClick={handleSubmit}>
                Add Product
             </button>

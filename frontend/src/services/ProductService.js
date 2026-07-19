@@ -9,9 +9,32 @@ class ProductService{
             headers:{Authorization: `Bearer ${token}`}
     };
     }
-    getAllProducts(){ return axios.get(BASE_URL,this.getAuthHeader());}
-    addProducts(product){return axios.post(BASE_URL,product,this.getAuthHeader());}
-    updateProduct(id,product){return axios.put(`${BASE_URL}/${id}`,product,this.getAuthHeader());}
-    deleteProduct(id){return axios.delete(`${BASE_URL}/${id}`,this.getAuthHeader());}
+    getAllProducts() {
+         return axios.get(BASE_URL,this.getAuthHeader());
+        }
+
+    getProductById(id) {
+         return axios.get(`${BASE_URL}/${id}`, this.getAuthHeader());
+        }     
+
+    addProducts(formData) {
+    return axios.post(BASE_URL, formData, {
+        headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            "Content-Type": "multipart/form-data"
+        }
+    });
+}
+   updateProduct(id, formData) {
+    return axios.put(`${BASE_URL}/${id}`, formData, {
+        headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            "Content-Type": "multipart/form-data"
+        }
+    });
+}
+
+    deleteProduct(id){
+        return axios.delete(`${BASE_URL}/${id}`,this.getAuthHeader());}
 }
 export default new ProductService();

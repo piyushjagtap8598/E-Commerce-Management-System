@@ -15,8 +15,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ecommerce.entity.Category;
 import com.ecommerce.entity.Product;
+import com.ecommerce.repository.CategoryRepository;
 import com.ecommerce.service.ProductService;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/api/products")
@@ -26,10 +36,42 @@ public class ProductController
 	@Autowired
 	private ProductService productservice;
 	
+	@Value("${file.upload-dir}")
+	private String uploadDir;
+	
+	@Autowired
+	private CategoryRepository categoryrepository;
+
 	@PostMapping
-	public Product addProduct(@RequestBody Product product)
-	{
-		return productservice.addProduct(product);
+	public Product addProduct(
+	        @RequestParam("productname") String productname,
+	        @RequestParam("price") Double price,
+	        @RequestParam("quantity") Integer quantity,
+	        @RequestParam("description") String description,
+	        @RequestParam("categoryId") Long categoryId,
+	        @RequestParam("image") MultipartFile image) throws IOException {
+
+		String fileName = image.getOriginalFilename();
+
+		Path path = Paths.get(uploadDir, fileName);
+
+
+		Files.createDirectories(path.getParent());
+
+		Files.write(path, image.getBytes());
+
+
+		Product product = new Product();
+
+	    product.setProductname(productname);
+	    product.setPrice(price);
+	    product.setQuantity(quantity);
+	    product.setDescription(description);
+	    product.setImageName(fileName);
+	    Category category= categoryrepository.findById(categoryId).orElse(null);
+	    product.setCategory(category);
+
+	    return productservice.addProduct(product);
 	}
 	
 	@GetMapping
@@ -37,11 +79,46 @@ public class ProductController
 	{
 		return productservice.getAllProducts();
 	}
+	@GetMapping("/{id}")
+	public ResponseEntity<Product> getProductById(@PathVariable Long id) {
+	    Product product = productservice.getProductById(id);
+	    return ResponseEntity.ok(product);
+	}
 	
 	@PutMapping("/{id}")
-	public Product updateProduct(@PathVariable Long id,@RequestBody Product product)
-	{
-		return productservice.updateProduct(id, product);
+	public Product updateProduct(
+	        @PathVariable Long id,
+	        @RequestParam("productname") String productname,
+	        @RequestParam("price") Double price,
+	        @RequestParam("quantity") Integer quantity,
+	        @RequestParam("description") String description,
+	        @RequestParam("categoryId") Long categoryId,
+	        @RequestParam(value = "image", required = false) MultipartFile image) throws IOException {
+
+	    Product product = productservice.getProductById(id);
+
+	    product.setProductname(productname);
+	    product.setPrice(price);
+	    product.setQuantity(quantity);
+	    product.setDescription(description);
+
+	    Category category = categoryrepository.findById(categoryId).orElse(null);
+	    product.setCategory(category);
+
+	    if (image != null && !image.isEmpty()) {
+
+	        String fileName = image.getOriginalFilename();
+
+	        Path path = Paths.get(uploadDir, fileName);
+
+	        Files.createDirectories(path.getParent());
+
+	        Files.write(path, image.getBytes());
+
+	        product.setImageName(fileName);
+	    }
+
+	    return productservice.updateProduct(id, product);
 	}
 	
 	@DeleteMapping("/{id}")

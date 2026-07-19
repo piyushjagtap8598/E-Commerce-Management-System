@@ -15,41 +15,66 @@ function Cart(){
         setCartItems(response.data);
     };
     
-    const removeItem = async(id) =>{
-       const confirmDelete = window.confirm("Are You Sure Want to remove this item from cart?");
-       if(confirmDelete){
-        await axios.delete(`http://localhost:8080/api/cart/${id}`);
-        alert("Invalid Removed Succesfully");
-        loadCartItems();
-       }
-    };
+    const removeItem = async (id) => {
+    const confirmDelete = window.confirm(
+        "Are you sure you want to remove this item from cart?"
+    );
 
-    const placeOrder = async () =>{
-        try{
+    if (confirmDelete) {
+        try {
             const token = localStorage.getItem("token");
-            const orderItems = cartItems.map(item => ({
-                product:{
-                    id:item.product.id
-                },
-                quantity:item.quantity,
-                price:item.product.price
-            }));
-            const order ={
-                user: {id: 1},
-                totalamount:totalamount,
-                orderitems:orderItems
-            };
-            console.log(order);
-            await axios.post("http://localhost:8080/api/orders",order,{headers:{Authorization: `Bearer ${token}`}});
-            await axios.delete("http://localhost:8080/api/cart/clear",{headers:{Authorization: `Bearer ${token}`}});
-            alert("Order Placed Succesfully");
+
+            await axios.delete( `http://localhost:8080/api/cart/${id}`, {headers: {Authorization: `Bearer ${token}`}});
+            alert("Item Removed Successfully");
             loadCartItems();
-        }
-        catch(error){
+
+        } catch (error) {
             console.log(error);
-            alert("Failed To Place Order");
+            alert("Failed to remove item");
         }
-    };
+    }
+};
+   const placeOrder = async (item) => {
+    try {
+        const token = localStorage.getItem("token");
+
+        const order = {
+            user: { id: 1 },
+            totalamount: item.product.price * item.quantity,
+            orderitems: [{
+                product: { id: item.product.id },
+                quantity: item.quantity,
+                price: item.product.price
+            }]
+        };
+
+        await axios.post(
+            "http://localhost:8080/api/orders",
+            order,
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }
+        );
+
+        await axios.delete(
+            `http://localhost:8080/api/cart/${item.id}`,
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }
+        );
+
+        alert("Order Placed Successfully");
+        loadCartItems();
+
+    } catch (error) {
+        console.log(error);
+        alert("Failed To Place Order");
+    }
+};
 
     const totalamount = cartItems.reduce((total,item) => total+(item.product.price*item.quantity),0);
 
@@ -80,8 +105,8 @@ return(
                                 Remove
                             </button> &nbsp;&nbsp;
 
-                            <button className="btn btn-primary mt-10" onClick={placeOrder}>
-                                Place Order
+                            <button className="btn btn-primary mt-10" onClick={() => placeOrder(item)}>
+                               Place Order
                             </button>
                         </td>
 
