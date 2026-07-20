@@ -179,7 +179,6 @@ E-Commerce-Management-System
 ### Change Password
 ![Change Password](screenshots/ChangePassword.png)
 
-
 ---
 
 ## Installation & Setup
