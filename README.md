@@ -14,18 +14,34 @@ A full-stack E-Commerce Management System built using Spring Boot, React.js, MyS
 - Role-Based Access Control (ADMIN / USER)
 - Protected API Endpoints
 
+
+### REST API Features
+
+- Authentication APIs
+- Product Management APIs
+- Cart Management APIs
+- Order Management APIs
+- Role-Based Authorization
+
+
 ### Admin Features
 
+- Admin Dashboard
+- Admin Profile Management
 - View All Products
 - Add New Products
 - Update Existing Products
+- Product Image Upload
 - Delete Products
 - Manage Product Catalog
 
 ### User Features
 
+- User Dashboard
+- User Profile Management
 - Browse Products
 - Add Products to Cart
+- Buy Now
 - View Cart Items
 - Place Orders
 - View Order History
@@ -58,7 +74,7 @@ A full-stack E-Commerce Management System built using Spring Boot, React.js, MyS
 - GitHub
 - Postman
 - VS Code
-- Eclipse/STS
+- Eclipse
 
 ---
 ## Database Tables
