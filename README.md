@@ -28,6 +28,10 @@ A full-stack E-Commerce Management System built using Spring Boot, React.js, MyS
 
 - Admin Dashboard
 - Admin Profile Management
+- View Profile
+- Edit Profile
+- Change Password
+- Upload Profile Image
 - View All Products
 - Add New Products
 - Update Existing Products
@@ -39,6 +43,10 @@ A full-stack E-Commerce Management System built using Spring Boot, React.js, MyS
 
 - User Dashboard
 - User Profile Management
+- View Profile
+- Edit Profile
+- Change Password
+- Upload Profile Image
 - Browse Products
 - Add Products to Cart
 - Buy Now
@@ -129,6 +137,20 @@ E-Commerce-Management-System
 ### Update Product
 
 ![Update Product](screenshots/UpdateProduct.png)
+
+
+---
+
+## Profile Management
+
+### Profile Page
+![Profile Page](screenshots/Profile.png)
+
+### Edit Profile
+![Edit Profile](screenshots/EditProfile.png)
+
+### Change Password
+![Change Password](screenshots/ChangePassword.png)
 
 
 ---
