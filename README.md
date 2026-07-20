@@ -137,7 +137,7 @@ E-Commerce-Management-System
 
 ### User Dashboard
 
-![USer Dashboard](screenshots/UserDashboard.png)
+![User Dashboard](screenshots/UserDashboard.png)
 
 ### Product List
 
@@ -164,20 +164,20 @@ E-Commerce-Management-System
 
 
 ### Backend Setup
-
+```bash
 cd backend
 mvn spring-boot:run
-
+```
 Backend will start on:
 
 http://localhost:8080
 
 ### Frontend Setup
-
+```bash
 cd frontend
 npm install
 npm start
-
+```
 Frontend will start on:
 
 http://localhost:3000
