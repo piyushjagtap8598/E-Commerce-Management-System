@@ -94,6 +94,10 @@ E-Commerce-Management-System
 
 ### Admin Module
 
+### Admin Dashboard
+
+![Admin Dashboard](screenshots/AdminDashboard.png)
+
 ### Product List
 
 ![Product List](screenshots/AdminProductList.png)
@@ -110,6 +114,10 @@ E-Commerce-Management-System
 ---
 
 ### User Module
+
+### USer Dashboard
+
+![USer Dashboard](screenshots/UserDashboard.png)
 
 ### Product List
 
