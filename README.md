@@ -161,25 +161,36 @@ E-Commerce-Management-System
 
 ## Installation & Setup
 
+### Prerequisites
 
+- Java 21
+- MySQL 8+
+- Maven
+- Node.js & npm
 
 ### Backend Setup
+
 ```bash
 cd backend
 mvn spring-boot:run
 ```
-Backend will start on:
 
+Or open the backend project in **Eclipse/STS** and run:
+
+`EcommerceManagementSystemApplication.java` → **Run As → Java Application**
+
+Backend will start at:
 http://localhost:8080
 
 ### Frontend Setup
+
 ```bash
 cd frontend
 npm install
 npm start
 ```
-Frontend will start on:
 
+Frontend will start at:
 http://localhost:3000
 
 ---
