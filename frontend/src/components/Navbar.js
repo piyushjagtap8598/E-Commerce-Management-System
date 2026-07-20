@@ -1,5 +1,8 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import  { useEffect, useState } from "react";
+import axios from "axios";
+
 
 function Navbar() {
 
@@ -7,11 +10,39 @@ function Navbar() {
 
     const role = localStorage.getItem("role");
 
+    const [profileImage, setProfileImage] = useState(null);
+
+useEffect(() => {
+    loadProfile();
+}, []);
+
+const loadProfile = async () => {
+    try {
+
+        const token = localStorage.getItem("token");
+
+        const response = await axios.get(
+            "http://localhost:8080/api/profile",
+            {
+                headers: {
+                    Authorization: "Bearer " + token
+                }
+            }
+        );
+
+        setProfileImage(response.data.profileImage);
+
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 
     const logout = () => {
         localStorage.removeItem("token");
         localStorage.removeItem("role");
         localStorage.removeItem("username");
+        localStorage.removeItem("profileImage");
 
         navigate("/");
     };
@@ -134,11 +165,20 @@ function Navbar() {
                     </ul>
 
 
-                     <button
-                         className="btn btn-info"
-                         onClick={() => navigate("/profile")}
-                         title="Profile">
-                         <i className="bi bi-person-circle fs-5"></i>
+                    <button
+                       className="btn btn-info d-flex align-items-center justify-content-center"
+                       onClick={() => navigate("/profile")}
+                       title="Profile"
+                       style={{ width: "45px", height: "45px", borderRadius: "50%", padding: 0 }}
+                     >
+
+                      <img
+                        src={ profileImage ? "http://localhost:8080/uploads/profile/" +
+                              profileImage : `https://ui-avatars.com/api/?name=${localStorage.getItem("name")}&background=ffffff&color=0d6efd&size=150`
+                             }
+                       alt="Profile"
+                       style={{ width: "40px",height: "40px",borderRadius: "50%",objectFit: "cover"}}
+                      />
 
                     </button>
 

@@ -21,18 +21,20 @@ public class User
 	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private String password;
 	private String role;
+	private String profileImage;
 	
 	public User() {
 		
 	}
 	
-	public User(Long id,String name,String email,String password,String role )
+	public User(Long id,String name,String email,String password,String role,String profileImage )
 	{
 		this.id=id;
 		this.name=name;
 		this.email=email;
 		this.password=password;
 		this.role=role;
+		this.profileImage=profileImage;
 	}
 
 	public Long getId() {
@@ -74,11 +76,17 @@ public class User
 	public void setRole(String role) {
 		this.role = role;
 	}
+	public String getProfileImage() {
+		return profileImage;
+	}
+	public void setProfileImage(String profileImage) {
+		this.profileImage=profileImage;
+	}
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", role=" + role
-				+ "]";
+				+ ",profileImage="+profileImage+"]";
 	}
 	
 	

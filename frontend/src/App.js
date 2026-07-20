@@ -12,6 +12,8 @@ import Dashboard from "./pages/Dashboard";
 import Profile from './components/Profile';
 import ProductDetails from './pages/ProductDetails';
 import Register from './pages/Register';
+import EditProfile from './pages/EditProfile';
+import ChangePassword from './pages/ChangePassword';
 
 function ProtectedRoute({children})
 {
@@ -32,8 +34,11 @@ function App() {
       <Route path="/orders/:id" element={ <ProtectedRoute> <OrderDetails/> </ProtectedRoute>}/>
       <Route path="/dashboard" element={<ProtectedRoute> <Dashboard /> </ProtectedRoute>} />
       <Route path="/profile" element={ <ProtectedRoute> <Profile/> </ProtectedRoute>}/>
+      <Route path="/edit-profile" element={ <ProtectedRoute> <EditProfile/> </ProtectedRoute>}/>
+      <Route path="/change-password" element={ <ProtectedRoute> <ChangePassword/> </ProtectedRoute>}/>
       <Route path="/product/:id" element={ <ProtectedRoute> <ProductDetails/> </ProtectedRoute>}/>
       <Route path="/register" element={  <Register/>}/>
+     
     </Routes>
     </BrowserRouter>
   );
