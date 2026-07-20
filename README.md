@@ -141,19 +141,6 @@ E-Commerce-Management-System
 
 ---
 
-## Profile Management
-
-### Profile Page
-![Profile Page](screenshots/Profile.png)
-
-### Edit Profile
-![Edit Profile](screenshots/EditProfile.png)
-
-### Change Password
-![Change Password](screenshots/ChangePassword.png)
-
-
----
 
 ### User Module
 
@@ -178,6 +165,20 @@ E-Commerce-Management-System
 ### Order Details View
 
 ![Order Details](screenshots/OrderDetails.png)
+
+---
+
+## Profile Management
+
+### Profile Page
+![Profile Page](screenshots/Profile.png)
+
+### Edit Profile
+![Edit Profile](screenshots/EditProfile.png)
+
+### Change Password
+![Change Password](screenshots/ChangePassword.png)
+
 
 ---
 
