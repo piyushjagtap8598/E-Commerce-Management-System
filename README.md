@@ -135,7 +135,7 @@ E-Commerce-Management-System
 
 ### User Module
 
-### USer Dashboard
+### User Dashboard
 
 ![USer Dashboard](screenshots/UserDashboard.png)
 
@@ -188,7 +188,9 @@ http://localhost:3000
 
 ## Author
 
-Piyush Jagtap
+**Piyush Jagtap**
 
 Java Full Stack Developer
+- LinkedIn: https://www.linkedin.com/in/piyush-jagtap-5a80713ab
+- GitHub: https://github.com/piyushjagtap8598
 
