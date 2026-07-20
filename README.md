@@ -88,7 +88,11 @@ E-Commerce-Management-System
 
 ## Screenshots
 
-### Login page
+### Registration Page
+
+![Registration Page](screenshots/Registration.png)
+
+### Login Page
 
 ![Login Page](screenshots/Login.png)
 
