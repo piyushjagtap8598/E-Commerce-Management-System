@@ -14,12 +14,14 @@ function EditProduct(){
 
     useEffect(()=>{
         ProductService.getAllProducts().then((res)=>{
-            const product = res.data.find(p => p.id === id);
+            const product = res.data.find(p => p.id === Number(id));
+            if(product){
             setProductName(product.productname);
             setPrice(product.price);
             setQuantity(product.quantity);
             setDescription(product.description);
             setCategoryId(product.category?.id || "");
+            }
         });
     }, [id]);
 
