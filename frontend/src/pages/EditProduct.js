@@ -14,7 +14,7 @@ function EditProduct(){
 
     useEffect(()=>{
         ProductService.getAllProducts().then((res)=>{
-            const product = res.data.find(p => p.id == id);
+            const product = res.data.find(p => p.id === id);
             setProductName(product.productname);
             setPrice(product.price);
             setQuantity(product.quantity);

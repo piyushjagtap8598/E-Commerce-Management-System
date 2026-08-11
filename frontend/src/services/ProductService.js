@@ -37,4 +37,5 @@ class ProductService{
     deleteProduct(id){
         return axios.delete(`${BASE_URL}/${id}`,this.getAuthHeader());}
 }
-export default new ProductService();
+const productService = new ProductService();
+export default  productService;
