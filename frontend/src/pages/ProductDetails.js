@@ -22,7 +22,6 @@ function ProductDetails() {
     const addToCart = () => {
 
         const cartItem = {
-            user: { id: 1 },
             product: { id: product.id },
             quantity: 1
         };
@@ -35,7 +34,6 @@ function ProductDetails() {
     const buyNow = () => {
 
         const order = {
-            user: { id: 1 },
             totalamount: product.price,
             orderitems: [
                 {
@@ -65,7 +63,7 @@ function ProductDetails() {
                 <div className="text-center">
 
                     <img
-                        src={`http://localhost:8080/uploads/${product.imageName}`}
+                        src={`https://e-commerce-backend-929k.onrender.com/uploads/${product.imageName}`}
                         alt={product.productname}
                         style={{
                             width: "450px",

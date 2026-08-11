@@ -10,7 +10,7 @@ function Orders(){
     const loadOrders = async () =>{
         try{
             const token= localStorage.getItem("token");
-            const response= await axios.get("http://localhost:8080/api/orders",{headers:{Authorization: `Bearer ${token}`}});
+            const response= await axios.get("https://e-commerce-backend-929k.onrender.com/api/orders",{headers:{Authorization: `Bearer ${token}`}});
             setOrders(response.data);
         }
         catch(error){

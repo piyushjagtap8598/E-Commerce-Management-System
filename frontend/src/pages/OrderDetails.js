@@ -11,7 +11,7 @@ function OrderDetails(){
  const [order,setOrder] = useState(null);
  useEffect(() =>{
     const token = localStorage.getItem("token");
-    axios.get(`http://localhost:8080/api/orders/${id}`,{headers:{Authorization: `Bearer ${token}`}}).then(res => setOrder(res.data)).catch(err => console.log(err));
+    axios.get(`https://e-commerce-backend-929k.onrender.com/api/orders/${id}`,{headers:{Authorization: `Bearer ${token}`}}).then(res => setOrder(res.data)).catch(err => console.log(err));
  },[id]);
  if(!order)
  {

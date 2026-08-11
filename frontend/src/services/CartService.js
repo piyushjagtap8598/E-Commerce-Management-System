@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8080/api/cart";
+const BASE_URL = "https://e-commerce-backend-929k.onrender.com/api/cart";
 
 const getToken = () => {
     return localStorage.getItem("token");

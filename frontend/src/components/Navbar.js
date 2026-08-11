@@ -22,7 +22,7 @@ const loadProfile = async () => {
         const token = localStorage.getItem("token");
 
         const response = await axios.get(
-            "http://localhost:8080/api/profile",
+            "https://e-commerce-backend-929k.onrender.com/api/profile",
             {
                 headers: {
                     Authorization: "Bearer " + token
@@ -173,7 +173,7 @@ const loadProfile = async () => {
                      >
 
                       <img
-                        src={ profileImage ? "http://localhost:8080/uploads/profile/" +
+                        src={ profileImage ? "https://e-commerce-backend-929k.onrender.com/uploads/profile/" +
                               profileImage : `https://ui-avatars.com/api/?name=${localStorage.getItem("name")}&background=ffffff&color=0d6efd&size=150`
                              }
                        alt="Profile"

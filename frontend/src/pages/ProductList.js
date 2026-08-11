@@ -49,11 +49,10 @@ function ProductList(){
         try{
             const token= localStorage.getItem("token");
             const cartItem ={
-                user:{id:1},
                 product:{id:product.id},
                 quantity:1
             };
-            await axios.post("http://localhost:8080/api/cart",cartItem, {headers:{Authorization: `Bearer ${token}`}});
+            await axios.post("https://e-commerce-backend-929k.onrender.com/api/cart",cartItem, {headers:{Authorization: `Bearer ${token}`}});
             alert("Product Added To Cart");
         }
         catch(error){
@@ -65,9 +64,6 @@ function ProductList(){
          try {
 
         const order = {
-            user: {
-                id: 1
-            },
             totalamount: product.price,
             orderitems: [
                 {
@@ -119,7 +115,7 @@ function ProductList(){
                <div className="card h-100 shadow product-card" style={{ cursor: "pointer" }} onClick={() => navigate(`/product/${product.id}`)}>
 
                 <img
-                    src={`http://localhost:8080/uploads/${product.imageName}`}
+                    src={`https://e-commerce-backend-929k.onrender.com/uploads/${product.imageName}`}
                     className="card-img-top"
                     alt={product.productname}
                     style={{ height: "220px", objectFit: "cover" }}

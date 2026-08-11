@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8080/api/auth";
+const BASE_URL = "https://e-commerce-backend-929k.onrender.com/api/auth";
 
 class AuthService {
 

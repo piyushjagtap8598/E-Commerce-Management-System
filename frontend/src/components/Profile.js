@@ -20,7 +20,7 @@ function Profile() {
       const token = localStorage.getItem("token");
 
       const response = await axios.get(
-        "http://localhost:8080/api/profile",
+        "https://e-commerce-backend-929k.onrender.com/api/profile",
         {
           headers: {
             Authorization: "Bearer " + token
@@ -60,7 +60,7 @@ function Profile() {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        "http://localhost:8080/api/profile/upload-image",
+        "https://e-commerce-backend-929k.onrender.com/api/profile/upload-image",
         formData,
         {
           headers: {
@@ -113,7 +113,7 @@ function Profile() {
               preview
                 ? preview
                 : user.profileImage
-                ? "http://localhost:8080/uploads/profile/" + user.profileImage
+                ? "https://e-commerce-backend-929k.onrender.com/uploads/profile/" + user.profileImage
                 : `https://ui-avatars.com/api/?name=${user.name}&background=ffffff&color=0d6efd&size=150`
             }
             alt="Profile"

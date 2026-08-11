@@ -11,7 +11,7 @@ function Cart(){
 
     const loadCartItems=async() =>{
         const token = localStorage.getItem("token");
-        const response=await axios.get("http://localhost:8080/api/cart",{headers:{Authorization: `Bearer ${token}`}});
+        const response=await axios.get("https://e-commerce-backend-929k.onrender.com/api/cart",{headers:{Authorization: `Bearer ${token}`}});
         setCartItems(response.data);
     };
     
@@ -24,7 +24,7 @@ function Cart(){
         try {
             const token = localStorage.getItem("token");
 
-            await axios.delete( `http://localhost:8080/api/cart/${id}`, {headers: {Authorization: `Bearer ${token}`}});
+            await axios.delete( `https://e-commerce-backend-929k.onrender.com/api/cart/${id}`, {headers: {Authorization: `Bearer ${token}`}});
             alert("Item Removed Successfully");
             loadCartItems();
 
@@ -39,7 +39,6 @@ function Cart(){
         const token = localStorage.getItem("token");
 
         const order = {
-            user: { id: 1 },
             totalamount: item.product.price * item.quantity,
             orderitems: [{
                 product: { id: item.product.id },
@@ -49,7 +48,7 @@ function Cart(){
         };
 
         await axios.post(
-            "http://localhost:8080/api/orders",
+            "https://e-commerce-backend-929k.onrender.com/api/orders",
             order,
             {
                 headers: {
@@ -59,7 +58,7 @@ function Cart(){
         );
 
         await axios.delete(
-            `http://localhost:8080/api/cart/${item.id}`,
+            `https://e-commerce-backend-929k.onrender.com/api/cart/${item.id}`,
             {
                 headers: {
                     Authorization: `Bearer ${token}`
